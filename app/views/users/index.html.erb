@@ -1,0 +1,36 @@
+
+<!--ここがメインのページです。-->
+<!--User一覧表示-->
+
+
+
+<%= render 'list',user:@user,book:@book %>
+
+
+
+  <!--Users 右側-->
+  <h2>Users</h2>
+
+<% @users.each do |user| %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <td><%= image_tag user.get_profile_image(100,100) %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to"Show", user_path(user.id) %></td>
+  </tbody>
+</table>
+
+<% end %>
+
+<%= render 'users/footer' %>
