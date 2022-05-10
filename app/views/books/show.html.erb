@@ -1,4 +1,9 @@
 <!--ここは詳細のページです。-->
+<% if flash[:notice] %>
+ <div class="flash">
+  <%= flash[:notice] %>
+ </div>
+<% end %>
 <p id="notice"></p>
 <div class="container px-5 px-sm-0 ">
   <div class="row">
@@ -15,7 +20,7 @@
       <tbody>
         <td>
           <%= link_to user_path(@book.user.id) do %>
-          <%= image_tag @book.user.get_profile_image(100,100) %><br>
+          <%= image_tag @book.user.get_profile_image(80,80) %><br>
           <%= @book.user.name %>
           <% end %>
           </td>

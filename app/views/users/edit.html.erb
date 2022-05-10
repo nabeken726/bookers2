@@ -1,5 +1,10 @@
 <!--ここはUser編集のページです。-->
 <!--@user_id?-->
+<% if flash[:notice] %>
+ <div class="flash">
+  <%= flash[:notice] %>
+ </div>
+<% end %>
   <main>
     <p id="notice"></p>
     <div class="container">

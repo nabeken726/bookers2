@@ -1,6 +1,11 @@
 
 <!--ここがメインのページです。-->
 <!--User一覧表示-->
+<% if flash[:notice] %>
+ <div class="flash">
+  <%= flash[:notice] %>
+ </div>
+<% end %>
 <main>
 <p id="notice"></p>
 <div class="container px-5 px-sm-0 ">
@@ -8,15 +13,6 @@
   <div class="col-md-3">
 <%= render 'list',user:@user,book:@book %>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -36,7 +32,7 @@
 
   <tbody>
     <% @users.each do |user| %>
-    <td><%= image_tag user.get_profile_image(100,100) %></td>
+    <td><%= image_tag user.get_profile_image(80,80) %></td>
     <td><%= user.name %></td>
     <td><%= link_to"Show", user_path(user.id) %></td>
   </tbody>
