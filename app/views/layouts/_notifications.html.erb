@@ -1,4 +1,7 @@
 <!--フラッシュメッセージ用-->
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
+<% if notice %>
+　　<p><%= notice %></p>
+<% end %>
+<% if alert %>
+   <p><%= alert %></p>
 <% end %>
